@@ -1,0 +1,135 @@
+/*** basic styles ***/
+
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size: 32px;
+    background-color: #fff;
+}
+header{
+    background-color: plum;
+    border-bottom: 1px solid #fff;
+    text-align: center;
+}
+h1{
+    color: white;
+}
+h2{
+   /*float: left;*/
+   color: purple;
+   font-size: 30px;
+   padding-bottom: 0 auto;
+   padding-left: 50px;
+}
+
+
+main{
+    border-bottom:1px solid #ccc;
+    position:relative;
+    background-color: #fff;
+}
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+
+
+
+#randomShow {
+    display: block;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-left: 100px;
+    width: 530px;
+    height: 220px;
+    background-color: deeppink;
+}
+.setView1 {
+    background: url(images/wether_1.jpg) no-repeat left top;
+    border: #ff3333 10px solid;
+}
+.setView2 {
+    background: url(images/wether_2.jpg) no-repeat left top;
+    border: #33ff33 10px solid;
+}
+.setView3 {
+    background: url(images/wether_3.jpg) no-repeat left top;
+    border: #ff33ff 10px solid;
+}
+.setView4 {
+    background: url(images/wether_4.jpg) no-repeat left top;
+    border: #ffff33 10px solid;
+}
+.setView5 {
+    background: url(images/wether_5.jpg) no-repeat left top;
+    border: #3333ff 10px solid;
+}
+
+
+
+main p{
+    margin: 10px;
+    font-size:100%;
+    text-align: center;
+    color: #fff;
+    /*border-bottom:1px solid #fff;*/
+    height:200px;
+}
+
+main ul{
+    padding: 0;
+    /*border-top: 1px solid #000000;*/
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+}
+
+main li {
+   list-style-type:none;
+    border: 1px solid #fff;
+    background-color: plum;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+
+
+#site_map{
+  margin-top: 100px;
+}
+/*footer {
+  border-top: 1px solid #778899;
+}*/
+footer li,footer a{
+  display: block;
+}
+footer li {
+  /*float: left;*/
+  margin: 50px;
+}
+footer a {
+	margin-left:45px;
+    margin-right:45px;
+	padding:23px;
+    text-align: center;
+	font-size: xx-large;
+	color: #FFFFFF;
+    background-color: purple;
+    /*border-top: 5px solid #FFFFFF;
+    border-bottom: 40px solid #FFFFFF;*/	
+}
+footer a:hover {
+	background-color: purple;
+	opacity:0.5;
+}
+/*#current a {
+	background-color: skyblue;
+	opacity:0.4;
+}*/
+
+
+
+/*#view{
+  background-color: #ccc;
+}*/

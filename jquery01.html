@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<!--<script src="jquery-2.1.3.min.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" href="memo.css">
+<title>練習</title>
+<script>
+//$(document).ready(function(){
+$(function(){
+  "use strict";
+  //ここから記述領域［START］
+  //let list = ["大吉","中吉","小吉"];
+  
+  $("#btn").on("click",function(){
+    //$("main").hide().show(4000).animate({top:100,left:100},1000);
+    //$("#size").show(4000);
+  
+    let v = $("#size").val();
+    //$("#output").html(v);
+  
+    $("ul").append("<li>"+v+"</li>");
+  });
+  
+  $("#view").on("mouseenter",function(){
+    $("#view").css("background-color","#ff00ff");
+  });
+  
+    
+    $("#clear").on("click",function(){
+      $("ul").empty();
+  
+  });
+});
+    /*let num = Math.floor(Math.random()*3);
+    $("#output").html(list[numn]);
+  });
+    let v = $("#size").val();
+    $("#output").html(v);
+  });*/
+  
+    /*$("#output").html($("#size").val());
+  });*/
+  //ここまでが記述領域［END]
+
+
+</script>
+</head>
+<body>
+
+<header>
+  <h1>jQuery練習</h1>
+</header>
+
+<main>
+  <input type="range" id="size" min="20" max="300" value="50">
+  <button id="btn">ボタン</button>
+  <button id="clear">消す</button>
+  <ul>
+    <li id="output">出力エリア</li>
+  </ul>
+  <p id="view">テスト</p>
+  <p class="cl1">サンプル１</p>
+  <p class="cl1">サンプル２</p>
+</main>
+
+<footer>フッター</footer>
+
+</body>
+</html>

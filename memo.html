@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myMemoPad</title>
+<!--<script src="jquery-2.1.3.min.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" href="memo.css">
+<script>
+  
+$(function(){
+
+  //$("#btn").on("click",function(){
+    //let v = $("#size").val();
+    //$("#output").html(v);
+    //$("ul").append("<li>"+v+"</li>");
+  //});
+  
+  //$("#view").on("mouseenter",function(){
+    //$("#view").css("background-color","#ff00ff");
+ // });
+  
+  //この中に処理を記述 開始
+   $("main").hide().show(4000).animate(/*{top:100,left:100},*/1000);
+    //$("#size").show(4000);
+   /*$('.repeater').repeater({
+    defaultValues: {
+      'sei': '名字',
+      'mei': '名前',
+      'select-input': '女性'
+    },
+    show: function () {
+      $(this).slideDown();
+    },
+    hide: function (deleteElement) {
+      if(confirm('削除してもいーですかー？')) {
+        $(this).slideUp(deleteElement);
+      }
+    }
+  });*/
+  
+  
+  //1.Save クリックイベント
+  $("#save").on("click",function() {
+    let value1 = $("#text_area1").val();
+    localStorage.setItem("memo1",value1);
+    let value2 = $("#text_area2").val();
+    localStorage.setItem("memo2",value2);
+    let value3 = $("#text_area3").val();
+    localStorage.setItem("memo3",value3);
+    let value4 = $("#text_area4").val();
+    localStorage.setItem("memo4",value4);
+    let value5 = $("#text_area5").val();
+    localStorage.setItem("memo5",value5);
+    
+    if($("#checkbox1").css('content','\f046') == true) {
+      let v = $("#checkbox").css('content', '\f046');
+      localStorage.setItem("memo",v);
+      //localStorage.setItem("memo",)
+    } else {
+      
+    }
+    
+     // $('label').removeClass('content','\f046');
+    //}
+    //$("#example").css({  
+        //"color": "red",
+        //font-weight": "bold"
+    //});
+    
+    /*var checkbox = document.getElementById( "checkbox" );
+    checkbox.checked = false;*/
+    
+    /*let naame = $(this).attr('name');
+    let value = $(this).val();
+    if($(this).is("#save")){
+      console.log(name,value);
+    　oTable.fnFilter(name,value,false,true,false,true)
+    　localStorage.setItem(this.name,'checked');
+    }else {
+      console.log(name,value);
+      oTable.fnFilter('',value,false,true,false,true);
+      localStorage.removeItem(this.name);
+    }*/
+     
+    alert("Saveしました！");
+  });
+
+  
+  //2.clear クリックイベント
+  $("#clear").on("click",function() {
+    localStorage.removeItem("memo1");
+    $("#text_area1").val("");
+    localStorage.removeItem("memo2");
+    $("#text_area2").val("");
+    localStorage.removeItem("memo3");
+    $("#text_area3").val("");
+    localStorage.removeItem("memo4");
+    $("#text_area4").val("");
+    localStorage.removeItem("memo5");
+    $("#text_area5").val("");
+    $('#checkbox').removeAttr('checked');
+    
+    /*var checkbox = document.getElementById( "checkbox" );
+    checkbox.checked = false;*/
+    alert("Clearします…");
+  });
+      
+  
+  //3.ページ読み込み：保存データ取得表示
+  if(localStorage.getItem("memo1")){
+     //let checked = localStorage.getItem("check");
+     let value1 = localStorage.getItem("memo1");
+     //$("#box1").checkOn(checked);
+     $("#text_area1").val(value1);
+  }
+  if(localStorage.getItem("memo2")){
+     //let checked = localStorage.getItem("check");
+     let value2 = localStorage.getItem("memo2");
+     //$("#box1").checkOn(checked);
+     $("#text_area2").val(value2);
+  }
+   if(localStorage.getItem("memo3")){
+     //let checked = localStorage.getItem("check");
+     let value3 = localStorage.getItem("memo3");
+     //$("#box1").checkOn(checked);
+     $("#text_area3").val(value3);
+  }
+   if(localStorage.getItem("memo4")){
+     //let checked = localStorage.getItem("check");
+     let value4 = localStorage.getItem("memo4");
+     //$("#box1").checkOn(checked);
+     $("#text_area4").val(value4);
+  }
+   if(localStorage.getItem("memo5")){
+     //let checked = localStorage.getItem("check");
+     let value5 = localStorage.getItem("memo5");
+     //$("#box1").checkOn(checked);
+     $("#text_area5").val(value5);
+     
+  if(localStorage.getItem("memo")){
+     //let checked = localStorage.getItem("check");
+     let result = localStorage.getItem("memo");
+     //$("#box1").checkOn(checked);
+     $("#box1").css('content','\f046'); 
+     
+  }
+     
+  if(localStorage.getItem("memo")){
+     //let checked = localStorage.getItem("check");
+     let v = localStorage.getItem("memo");
+     //$("#box1").checkOn(checked);
+     $("#checkbox").css(v);
+  }
+  //ロード時に表示
+  //※こんなこともできる例
+
+    
+  //この中に処理を記述 終了
+  
+  }
+});
+</script>
+</head>
+<body>
+
+<header>
+  <h1>MemoPad</h1>
+</header>
+
+<main>
+  <h2>♦今日のやることリスト♦</h2>
+  <!--<button id="t1">Add</button>->
+  
+  <!--<div class="box" data-formno="0" style="border:dashed 1px #ccc">
+		<p class="no"></p>
+		<p>
+		<br>
+		<input type="text" name="input[0]" class="namae">
+		</p>
+		<p>
+		<br>
+		<textarea name="textarea[0]" cols="30" rows="10" class="toiawase"></textarea>
+    </p>
+	</div>
+	<p><a class="addformbox">Add</a></p>-->
+  
+  <!--<form action="memo.html" class="repeater">
+  <div data-repeater-list="group-a">
+    <div data-repeater-item>
+      <input type="text" name="text" value="text"/>
+    </div>
+  </div>
+  <input data-repeater-create type="button" value="Add"/>
+</form>-->
+
+  <form class="js-form-storage">
+  
+  <textarea id="text_area1"></textarea>
+  <div>
+    <input id="box1" type="checkbox" />
+    <label for="box1"></label>
+  </div>
+  
+  <textarea id="text_area2"></textarea> 
+  <div>
+    <input id="box2" type="checkbox" />
+    <label for="box2"></label>
+  </div>
+  
+  <textarea id="text_area3"></textarea>
+  <div>
+    <input id="box3" type="checkbox" />
+    <label for="box3"></label>
+  </div>
+  
+　 <textarea id="text_area4"></textarea>
+  <div>
+    <input id="box4" type="checkbox" />
+    <label for="box4"></label>
+  </div>
+  
+   <textarea id="text_area5"></textarea>
+  <div>
+    <input id="box5" type="checkbox" />
+    <label for="box5"></label>
+  </div>
+  </form>
+  <!--<h2>ほしいものリスト</h2>
+  <textarea id ="text_area2"></textarea>-->
+  
+  <ul>
+    <li id="save">Save</li>
+    <li id="clear">Clear</li>
+  </ul>
+  <!--<button id="btn">今日の運勢</button>-->
+  </main>
+
+
+<footer id="site_map">
+   <aside>
+     <ul>
+       <li id="current"><a href="memo2.html">今日の運勢</a></li>
+     </ul>
+   </aside>
+  <small>Otsuma i-design</small></footer>
+
+</body>
+
+</html>
